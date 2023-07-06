@@ -1,11 +1,15 @@
 # godot-4-useful-scripts
 some useful, reusable godot 4 scripts i frequently refer to
 
-Under the MIT License.
+Under the MIT License. Aimed for **Godot 4.1**.
 
 ## Descriptions
 ### Attacks
-This contains some useful scripts I used to modularize (is that a word?) attack data for various action based games. `AttackData.gd` stores a copy of `DamageData.gd` and frame data information. `DamageData.gd` stores a damage (range), knockback, screenshake, and hitfreeze amounts. This is often used with the `Events.gd` singleton/design pattern also included in this repository.
+This contains some useful scripts I used to modularize (is that a word?) attack data for various action based games. 
+
+`AttackData.gd` stores a copy of `DamageData.gd` and frame data information. `DamageData.gd` stores a damage (range), knockback, screenshake, and hitfreeze amounts. This is often used with the `Events.gd` singleton/design pattern also included in this repository.
+
+`Hitbox.gd` (and Hitbox.tscn) is used to make a reusable scene that most things in your game can implement and have the same functionality. In the future I may update it with some other goodies.
 
 ### State Machine
 An expansion of [GDQuest's State Machine article](https://www.gdquest.com/tutorial/godot/design-patterns/finite-state-machine/), to include a version for the Player and for the Enemies. Relatively well commented but likely needs a small amount of adjusting per project.
