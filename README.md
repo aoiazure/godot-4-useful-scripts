@@ -34,4 +34,4 @@ ex: I used this in a top-down arena shooter prototype to store and calculate dam
 ## Credits
 The `state_machine` folder of scripts is initially based off of [GDQuest's State Machine article](https://www.gdquest.com/tutorial/godot/design-patterns/finite-state-machine/), then expanded to include a version for both the Player and Enemies. Should be easy to adjust.
 
-The `CameraWithShake.gd` is based off of a YouTube tutorial I saw a long time ago and have since lost. :(
+The `CameraJuice2D.gd` is based off of this [YouTube tutorial](https://youtu.be/RVtcnkuNUIk?si=wqZkNfKp7YX4zTCt) by TheShaggyDev.

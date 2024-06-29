@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://actors/tools/weapons/damage_label.gd" id="1_12unl"]
+[ext_resource type="Script" path="res://attacks/DamageLabel.gd" id="1_12unl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r18h1"]
 font_color = Color(1, 0.917647, 0, 1)

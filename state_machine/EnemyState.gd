@@ -1,7 +1,7 @@
 class_name EnemyState
 extends CharacterState
 
-# Typed reference to the player node.
+# Typed reference to the enemy node. Requires a script of class_name Enemy.
 var enemy: Enemy
 
 

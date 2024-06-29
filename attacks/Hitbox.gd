@@ -24,7 +24,6 @@ func deal_damage(body: Node2D):
 		var b: bool = (body as Character).take_damage(data)
 		if b:
 			if data.screenshake != Vector2(-1, -1):
-				print(data.screenshake)
 				Events.shake(data.screenshake.x, data.screenshake.y)
 			if data.hitfreeze != Vector2(-1, -1):
 				Events.hitfreeze(data.hitfreeze.x, data.hitfreeze.y)

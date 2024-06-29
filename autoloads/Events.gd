@@ -1,10 +1,9 @@
+## Event bus.
 extends Node
 
 # Screen shake time
 signal screen_shake(strength, decay)
 
-# Emitted when Player dies
-signal player_died
 
 
 func shake(strength: float = 20.0, decay: float = 3.0):

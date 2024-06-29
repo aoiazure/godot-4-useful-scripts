@@ -3,7 +3,7 @@
 class_name PlayerState
 extends CharacterState
 
-# Typed reference to the player node.
+# Typed reference to the player node. Requires a script of class_name Player.
 var player: Player
 
 
