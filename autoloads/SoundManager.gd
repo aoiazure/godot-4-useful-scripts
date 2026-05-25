@@ -24,6 +24,7 @@ var current_music_volume: float = 0.5 :
 		set_music_volume(current_music_volume)
 
 var music_player: AudioStreamPlayer
+var ambient_player: AudioStreamPlayer
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -72,6 +73,8 @@ func play_3d_sound(stream: AudioStream, position_global: Vector3, pitch: float =
 	_3d_audio_players[player] = true
 	player.play()
 
+
+
 func play_music(stream: AudioStream) -> void:
 	if not music_player:
 		music_player = AudioStreamPlayer.new()
@@ -82,6 +85,18 @@ func play_music(stream: AudioStream) -> void:
 	music_player.stream = stream
 	music_player.play()
 
+func play_ambient(stream: AudioStream) -> void:
+	if not ambient_player:
+		ambient_player = AudioStreamPlayer.new()
+		ambient_player.bus = BUS_AMBIENT
+		add_child(ambient_player)
+	
+	ambient_player.process_mode = Node.PROCESS_MODE_ALWAYS
+	ambient_player.stream = stream
+	ambient_player.play()
+
+
+#region Audio player creation
 func get_generic_player(stream: AudioStream, pitch: float) -> AudioStreamPlayer:
 	if not _generic_audio_players.values().has(false):
 		var player:= AudioStreamPlayer.new()
@@ -144,3 +159,5 @@ func get_3d_player(stream: AudioStream, pitch: float) -> AudioStreamPlayer3D:
 			return player
 	
 	return null
+
+#endregion
