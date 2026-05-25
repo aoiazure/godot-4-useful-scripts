@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dresa11111s6a"]
+
+[ext_resource type="Script" uid="uid://btropeut617ic" path="res:///inventory/inventory_menu.gd" id="1_d81kl"]
+[ext_resource type="PackedScene" uid="uid://c7ktvxfcw3yn2" path="res:///inventory/inventory_slot.tscn" id="2_edfkm"]
+
+[node name="InventoryMenu" type="Control" unique_id=2029103356 node_paths=PackedStringArray("grid_container", "cursor_item", "hover_timer", "inspector_panel", "title_label", "desc_label")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_d81kl")
+number_of_slots = 8
+_number_of_columns = 4
+grid_container = NodePath("Root/MainBody/MarginContainer/Root/Top/GridContainer")
+cursor_item = NodePath("CanvasLayer/Cursor")
+hover_timer = NodePath("HoverTimer")
+inspector_panel = NodePath("Root/HoverDescription")
+title_label = NodePath("Root/HoverDescription/MarginContainer/VBoxContainer/NameLabel")
+desc_label = NodePath("Root/HoverDescription/MarginContainer/VBoxContainer/Description")
+
+[node name="Root" type="HBoxContainer" parent="." unique_id=1875532180]
+layout_mode = 1
+offset_right = 311.0
+offset_bottom = 200.0
+theme_override_constants/separation = 8
+
+[node name="MainBody" type="PanelContainer" parent="Root" unique_id=1449198584]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/MainBody" unique_id=501484753]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Root" type="VBoxContainer" parent="Root/MainBody/MarginContainer" unique_id=1515968213]
+layout_mode = 2
+
+[node name="Top" type="HBoxContainer" parent="Root/MainBody/MarginContainer/Root" unique_id=2055831277]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Root/MainBody/MarginContainer/Root/Top" unique_id=789845229]
+layout_mode = 2
+size_flags_horizontal = 2
+columns = 6
+
+[node name="HoverDescription" type="PanelContainer" parent="Root" unique_id=609706088]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/HoverDescription" unique_id=1757083502]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root/HoverDescription/MarginContainer" unique_id=1259756791]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="Root/HoverDescription/MarginContainer/VBoxContainer" unique_id=1231034078]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Name of Item"
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="Root/HoverDescription/MarginContainer/VBoxContainer" unique_id=2022858352]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Root/HoverDescription/MarginContainer/VBoxContainer" unique_id=1171112915]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Description of item."
+autowrap_mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=160424514]
+layer = 2
+
+[node name="Cursor" parent="CanvasLayer" unique_id=925307913 instance=ExtResource("2_edfkm")]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+
+[node name="HoverTimer" type="Timer" parent="." unique_id=535574122]
+wait_time = 0.3
+one_shot = true
