@@ -2,11 +2,17 @@ extends Node
 
 var pool: Dictionary[StringName, Pool] = {}
 
+## Check out an Object from the specified Pool. Automatically instantiates and returns a new one if none available.
 func borrow(key: StringName) -> Object:
 	return pool[key].get_object()
 
+## Give the Object back into the specified Pool.
 func return_object(key: StringName, object: Node) -> void:
 	pool[key].accept_return(object)
+
+## Called to create an object pool with a specified initial count and its factory method/scene.
+func register_pool(key: String, factory, initial_number: int) -> void:
+	pool[key] = Pool.new(factory, initial_number)
 
 class Pool extends RefCounted:
 	var factory: Callable
